@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Language } from '../interfaces/language';
+import { MyInfo } from '../interfaces/my_info';
+import { Skile } from '../interfaces/skile';
 
 @Component({
   selector: 'app-skiles',
@@ -6,6 +9,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skiles.component.scss']
 })
 export class SkilesComponent implements OnInit {
+
+   myInfo :  MyInfo[] =[
+    {key:'Cuontry', value:'Jorden'},
+    {key:'City', value:'Amman'},
+    {key:'Age', value:'24'},
+   ];
+
+   languages : Language[] =[
+    {name:'Arabic', ratio : 100},
+    {name:'English', ratio : 60},
+   ];
+
+   skiles : Skile[]=[
+     {id:1, name:'ASP.NetCor', ratio:85},
+     {id:2, name:'MVC', ratio:95},
+     {id:3, name:'Restfull API', ratio:85},
+     {id:4, name:'Entityfremwork', ratio:90},
+     {id:5, name:'LinQ', ratio:90},
+     {id:6, name:'Angular', ratio:75},
+     {id:7, name:'TypeScript', ratio:80},
+     {id:8, name:'JavaScript', ratio:80},
+     {id:9, name:'HTML', ratio:95},
+     {id:10, name:'CSS', ratio:90},
+     {id:11, name:'Jquery', ratio:70},
+     {id:12, name:'Bootstrab', ratio:85},
+     {id:13, name:'SQL Server', ratio:85},
+
+   ];
 
   constructor() { }
 

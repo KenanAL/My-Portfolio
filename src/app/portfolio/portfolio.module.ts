@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { PortfolioRoutingModule } from './portfolio-routing.module';
 import { SkilesComponent } from './skiles/skiles.component';
+import { PortfolioComponent } from './portfolio.component';
 
 
 @NgModule({
   declarations: [
-    SkilesComponent
+    PortfolioComponent,
+    SkilesComponent,
   ],
   imports: [
     CommonModule,
-    PortfolioRoutingModule
+    PortfolioRoutingModule,
   ]
 })
 export class PortfolioModule { }

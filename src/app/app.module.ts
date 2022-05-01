@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ColorDirective } from './directives/color.directive';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PortfolioModule } from './portfolio/portfolio.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ColorDirective,
-    PortfolioComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    PortfolioModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

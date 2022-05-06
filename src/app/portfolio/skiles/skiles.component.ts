@@ -1,3 +1,4 @@
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Language } from '../interfaces/language';
 import { MyInfo } from '../interfaces/my_info';
@@ -11,7 +12,7 @@ import { Skile } from '../interfaces/skile';
 export class SkilesComponent implements OnInit {
 
    myInfo :  MyInfo[] =[
-    {key:'Cuontry', value:'Jorden'},
+    {key:'Country', value:'Jorden'},
     {key:'City', value:'Amman'},
     {key:'Age', value:'24'},
    ];
@@ -37,10 +38,28 @@ export class SkilesComponent implements OnInit {
      {id:13, name:'SQL Server', ratio:85},
 
    ];
-
-  constructor() { }
+   showSide = true;
+   showIcon = false;
+   showAn = false;
+  constructor(private breakpointObserver :BreakpointObserver) { }
 
   ngOnInit(): void {
+
+    this.breakpointObserver.observe(['(max-width: 900px)']).subscribe((status :BreakpointState)=>{
+         if(status.matches){
+           this.showIcon = true;
+           this.showSide = false;
+         }else{
+           this.showIcon = false;
+           this.showSide = true;
+
+         }
+    })
+  }
+
+  show(){
+     this.showSide = !this.showSide;
+     this.showAn = !this.showAn;
   }
 
 }
